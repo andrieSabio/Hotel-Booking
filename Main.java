@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.HashMap;
-import java.util.Date;
+
 
 public class Main extends JFrame implements ActionListener {
 
@@ -24,13 +24,15 @@ public class Main extends JFrame implements ActionListener {
     private JButton buttonBack;
 
     public Main() {
-
+        ImageIcon image = new ImageIcon("th.jpg");
+        setIconImage(image.getImage());
+        setTitle("Booking System");
         setLayout(new BorderLayout());
-        setSize(400, 300);
+        setSize(300, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         panelMain = new JPanel();
-        panelMain.setLayout(new GridLayout(8, 1));
+        panelMain.setLayout(new GridLayout(15, 15));
 
         labelName = new JLabel("Name: ");
         labelId = new JLabel("ID: ");
@@ -202,7 +204,7 @@ public void actionPerformed(ActionEvent e) {
             this.name = name;
             this.id = id;
             this.room = null;
-            this.price = 1000;
+            this.price = 1500;
         }
         
         void bookRoom(String room, int price) {
